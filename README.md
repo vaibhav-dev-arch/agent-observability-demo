@@ -6,17 +6,17 @@ Related writing: [The Operator Model](https://vaibhavkhandelwal.com/writing/the-
 
 ## Live demo
 
-**Live URL:** _Deploy pending — see [Deploy on Render (free)](#deploy-on-render-free) below._
+**Live URL:** https://agent-observability-demo.onrender.com
 
-Open the link → try the API at `/docs`, or run the examples below.
+Opens **/docs** (Swagger UI). Try `POST /api/v1/agents/run` from there, or run the curl examples below.
 
 ## Quick start
 
 ### Try it live (recommended)
 
-Visit the live URL above once deployed.
+**https://agent-observability-demo.onrender.com** → redirects to `/docs`
 
-- **API docs:** `/docs` — interactive Swagger UI
+- **API docs:** [/docs](https://agent-observability-demo.onrender.com/docs) — interactive Swagger UI
 - **Run agent:** `POST /api/v1/agents/run`
 - **Eval gate:** `POST /api/v1/evals/run`
 - **Dashboard:** `GET /api/v1/dashboard`

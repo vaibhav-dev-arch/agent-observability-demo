@@ -7,6 +7,7 @@ from typing import Any
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 
 from .evals import list_evals, run_eval
@@ -30,6 +31,12 @@ class RunAgentRequest(BaseModel):
 
 class EvalRequest(BaseModel):
     trace_id: str
+
+
+@app.get("/")
+def index() -> RedirectResponse:
+    """Landing page — API demo lives at /docs."""
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")
