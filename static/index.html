@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Observability Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1a1a1a; }
+    h1 { font-size: 1.4rem; }
+    .muted { color: #555; }
+    a { color: #2563eb; }
+    code { background: #f4f4f5; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Agent Observability Demo v0.1</h1>
+  <p class="muted">Utility CS agent simulation — traces, policy boundaries, eval gate. No API keys required.</p>
+
+  <p><strong>Start here:</strong> <a href="/docs">Open API docs (/docs)</a></p>
+
+  <p>In Swagger UI, try:</p>
+  <ul>
+    <li><code>POST /api/v1/agents/run</code> — run the stub agent</li>
+    <li><code>GET /api/v1/agents/traces/{trace_id}</code> — inspect the trace</li>
+    <li><code>POST /api/v1/evals/run</code> — run the 5-check eval gate</li>
+  </ul>
+
+  <p class="muted">This is not <a href="https://ai-bcdr-governance.onrender.com">ai-bcdr-governance</a> — paths like <code>/simulate</code> and <code>/evidence</code> are not on this service.</p>
+
+  <p><a href="/health">/health</a> · <a href="https://github.com/vaibhav-dev-arch/agent-observability-demo">GitHub</a></p>
+</body>
+</html>

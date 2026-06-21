@@ -3,16 +3,20 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from typing import Any
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from .evals import list_evals, run_eval
 from .observability import store
 from .stub_agent import run_customer_service_task
+
+ROOT = Path(__file__).resolve().parents[1]
+STATIC_DIR = ROOT / "static"
 
 app = FastAPI(
     title="Agent Observability Demo",
@@ -34,9 +38,9 @@ class EvalRequest(BaseModel):
 
 
 @app.get("/")
-def index() -> RedirectResponse:
-    """Landing page — API demo lives at /docs."""
-    return RedirectResponse(url="/docs")
+def index() -> FileResponse:
+    """Landing page with links to /docs and key endpoints."""
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 @app.get("/health")
